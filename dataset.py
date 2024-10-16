@@ -28,8 +28,8 @@ def data_prepare():
     """
     
     # Define directories
-    output_directory = '/home/pqnhhh/Documents/GitHub/Real-time_Sales_Data_Analysis/processed_data'
-    data_folder = '/home/pqnhhh/Documents/GitHub/Real-time_Sales_Data_Analysis/raw_data'
+    output_directory = '/Users/pqnhhh/Documents/GitHub/Real-time_Sales_Data_Analysis/processed_data'
+    data_folder = '/Users/pqnhhh/Documents/GitHub/Real-time_Sales_Data_Analysis/raw_data'
     
     # Create output directory if it doesn't exist
     os.makedirs(output_directory, exist_ok=True)
