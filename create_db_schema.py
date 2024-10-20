@@ -1,6 +1,6 @@
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
-
+from config import config
 def create_database():
     """
     - Connects to the default database.
@@ -9,7 +9,9 @@ def create_database():
     """
 
     # Connect to the default database
-    conn = psycopg2.connect("host=localhost dbname=postgres user=postgres password=your_password")
+    conn = None
+    params = config()
+    conn = psycopg2.connect(**params)
     conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
     cur = conn.cursor()
 
@@ -25,7 +27,7 @@ def create_database():
     conn.close()
 
     # Connect to 'sales' database
-    conn = psycopg2.connect("host=localhost dbname=sales user=postgres password=your_password")
+    conn = psycopg2.connect(**params)
     cur = conn.cursor()
 
     return cur, conn
