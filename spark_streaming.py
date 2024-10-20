@@ -2,6 +2,7 @@ import logging
 from pyspark.sql import SparkSession
 from pyspark.sql.types import *
 from pyspark.sql.functions import *
+from config import config
 
 def setup_logger():
     """
@@ -172,11 +173,7 @@ def main():
 
     KAFKA_TOPIC_NAME = 'sales'
     KAFKA_BOOTSTRAP_SERVERS = 'localhost:9092'
-    postgres_config = {
-        'user': 'your_username',
-        'password': 'your_password',
-        'driver': 'org.postgresql.Driver',
-    }
+    postgres_config = config()
     postgres_jdbc_url = 'jdbc:postgresql://localhost:5432/sales'
     stock_filepath = "/Users/pqnhhh/Documents/GitHub/Real-time_Sales_Data_Analysis/processed_data/Stock_Quantity.csv"
 
