@@ -33,9 +33,9 @@ def init_spark_session():
     spark = SparkSession.builder \
         .appName("KafkaStructuredStreaming") \
         .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2,") \
-        .config('spark.jars', 'file:///home/alaa-haggag/Projects/Kafka-Spark_Streaming/lib/mongo-spark-connector_2.12-3.0.2.jar,') \
-        .config("spark.driver.extraClassPath", "file:///home/alaa-haggag/Projects/Kafka-Spark_Streaming/lib/postgresql-42.6.0.jar") \
-        .config("spark.executor.extraClassPath", "file:///home/alaa-haggag/Projects/Kafka-Spark_Streaming/lib/postgresql-42.6.0.jar") \
+        .config('spark.jars', '/Users/pqnhhh/Documents/GitHub/Real-time_Sales_Data_Analysis//lib/mongo-spark-connector_2.12-3.0.2.jar,') \
+        .config("spark.driver.extraClassPath", "/Users/pqnhhh/Documents/GitHub/Real-time_Sales_Data_Analysis/lib/postgresql-42.6.0.jar") \
+        .config("spark.executor.extraClassPath", "/Users/pqnhhh/Documents/GitHub/Real-time_Sales_Data_Analysis/lib/postgresql-42.6.0.jar") \
         .getOrCreate()
 
     spark.sparkContext.setLogLevel('ERROR')
@@ -178,7 +178,7 @@ def main():
         'driver': 'org.postgresql.Driver',
     }
     postgres_jdbc_url = 'jdbc:postgresql://localhost:5432/sales'
-    stock_filepath = "file:////home/alaa-haggag/Projects/Kafka-Spark_Streaming/Prepared_Data/Stock_Quantity.csv"
+    stock_filepath = "/Users/pqnhhh/Documents/GitHub/Real-time_Sales_Data_Analysis/processed_data/Stock_Quantity.csv"
 
     process_data(spark, KAFKA_TOPIC_NAME, KAFKA_BOOTSTRAP_SERVERS, stock_filepath, postgres_jdbc_url, postgres_config)
 
