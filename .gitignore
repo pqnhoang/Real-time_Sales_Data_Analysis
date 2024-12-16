@@ -4,7 +4,7 @@ PostgresData/
 spark/
 data/
 notebooks/
-
+superset/
 # Ignore Python cache and virtual environments
 __pycache__/
 *.pyc
