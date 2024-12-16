@@ -1,0 +1,28 @@
+# Ignore directories
+storage/
+PostgresData/
+spark/
+data/
+notebooks/
+
+# Ignore Python cache and virtual environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Ignore logs and temp files
+*.log
+*.tmp
+.DS_Store
+
+# Ignore database initialization files
+*.sqlite
+init.sql
