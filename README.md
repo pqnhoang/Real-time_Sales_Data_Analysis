@@ -1,4 +1,4 @@
-# Big Data Project about Traffic Congestion in Chicago
+# Big Data Project
 ## Help
 
 Run
