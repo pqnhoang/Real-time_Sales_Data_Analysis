@@ -6,7 +6,7 @@ from pathlib import Path
 
 # Kafka Configuration
 KAFKA_TOPIC_NAME = 'sales-data'
-KAFKA_BOOTSTRAP_SERVERS = '10.17.4.125:9092'
+KAFKA_BOOTSTRAP_SERVERS = ':9092'
 
 def generate_data():
     producer = KafkaProducer(
